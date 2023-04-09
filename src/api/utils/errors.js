@@ -57,7 +57,6 @@ export const checkError = (err) => {
   }
 
   if (err instanceof ValidationError) {
-    // todo parse params in validation
     const message = parseError(err.props);
 
     toast.error(message);
@@ -70,7 +69,6 @@ export const checkError = (err) => {
   }
 
   if (err instanceof AuthError) {
-    // todo signOut and redirect
     toast.error(err.message);
     return false;
   }

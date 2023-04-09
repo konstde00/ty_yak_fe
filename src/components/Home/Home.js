@@ -1,16 +1,16 @@
 import React from 'react';
-import {reportExport} from "../../api/files";
+import NavBar from "../NavBar/NavBar";
 
 export default function Home() {
     return(
+      <>
+        <NavBar/>
         <div>
-            <h2>Home</h2>
-            <button onClick={reportExport('MOST_ACTIVE_USERS', 'XLSX')}>
-                Report export xslx
-            </button>
-            <button onClick={reportExport('MOST_ACTIVE_USERS', 'DOCX')}>
-                Report export docx
-            </button>
+          <h2>Home</h2>
+          <div style={{textAlign: "center"}}>
+            Main page of ty-yak admin panel
+          </div>
         </div>
+      </>
     );
 }

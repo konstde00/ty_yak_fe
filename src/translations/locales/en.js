@@ -1,5 +1,3 @@
-import { ROUNDING_MODES, TIME_UNITS } from '../../constants/globalConstants';
-
 const translation = {
   general: {
     save: 'Save',

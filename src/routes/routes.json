@@ -1,0 +1,11 @@
+{
+  "HOME_PAGE": "/",
+  "LOGIN_PAGE": "/login",
+  "CHARTS_PAGE": "/charts",
+  "FILES_PAGE": "/files",
+  "REGISTRATION_PAGE": "/registration",
+  "GENERATE_CONFIRMATION_CODE": "/code/generate",
+  "CONFIRM_CODE": "/code/confirm",
+  "CHANGE_PASSWORD": "/password/change",
+  "UNAUTHORIZED": "/unauthorized"
+}
