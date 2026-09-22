@@ -17,6 +17,8 @@ const NavBar = () => {
       <div className="ty-header-inner">
         <NavLink className="ty-brand" to="/">Ty <span>yak?</span></NavLink>
         <nav className="ty-nav">
+          <NavLink to="/check-in">Check in</NavLink>
+          <NavLink to="/circle">Circle</NavLink>
           <NavLink to="/" end>Overview</NavLink>
           <NavLink to="/charts">Activity</NavLink>
           <NavLink to="/files">Reports and roster</NavLink>

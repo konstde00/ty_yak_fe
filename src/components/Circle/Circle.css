@@ -1,0 +1,66 @@
+.ty-circle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.ty-card {
+  background: var(--ty-surface);
+  border-radius: var(--ty-radius);
+  box-shadow: var(--ty-shadow);
+  padding: 22px 22px 20px;
+}
+
+.ty-card h2 {
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.ty-status-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--ty-border);
+  font-size: 14px;
+}
+
+.ty-status-row:first-of-type {
+  border-top: none;
+}
+
+.ty-status-row strong {
+  font-weight: 600;
+  min-width: 110px;
+}
+
+.ty-status-row span:last-child {
+  color: var(--ty-text-muted);
+}
+
+.ty-me {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ty-me .ty-muted {
+  color: var(--ty-text-muted);
+  font-size: 13px;
+}
+
+.ty-card form input {
+  margin-bottom: 12px;
+}
+
+.ty-card form button[type='submit'] {
+  margin-top: 6px;
+}
+
+.ty-card .ty-form-note {
+  font-size: 12px;
+  color: var(--ty-text-muted);
+  margin-bottom: 12px;
+}

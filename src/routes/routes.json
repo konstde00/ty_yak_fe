@@ -7,5 +7,7 @@
   "GENERATE_CONFIRMATION_CODE": "/code/generate",
   "CONFIRM_CODE": "/code/confirm",
   "CHANGE_PASSWORD": "/password/change",
-  "UNAUTHORIZED": "/unauthorized"
+  "UNAUTHORIZED": "/unauthorized",
+  "CHECK_IN_PAGE": "/check-in",
+  "CIRCLE_PAGE": "/circle"
 }

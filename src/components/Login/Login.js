@@ -26,7 +26,7 @@ export default function Login({ setToken }) {
     e.preventDefault();
     const token = await loginUser({ email, password });
     setToken(token);
-    navigate("/charts");
+    navigate("/check-in");
   }
 
   return (

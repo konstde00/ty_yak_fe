@@ -12,6 +12,8 @@ import GenerateConfirmationCode from "../RestorePassword/GenerateConfirmationCod
 import ConfirmCode from "../RestorePassword/ConfirmCode";
 import PasswordChange from "../RestorePassword/PasswordChange";
 import Home from "../Home/Home";
+import CheckIn from "../CheckIn/CheckIn";
+import Circle from "../Circle/Circle";
 
 const App = () => {
 
@@ -20,6 +22,8 @@ const App = () => {
     <>
       <Routes>
         <Route path={routes.HOME_PAGE} element={<Home/>} />
+        <Route path={routes.CHECK_IN_PAGE} element={<CheckIn/>} />
+        <Route path={routes.CIRCLE_PAGE} element={<Circle/>} />
         <Route path={routes.LOGIN_PAGE} exact element={<Login setToken={setToken}/>} />
         <Route path={routes.CHARTS_PAGE} exact element={<Charts/>} />
         <Route path={routes.FILES_PAGE} exact element={<Files/>} />
