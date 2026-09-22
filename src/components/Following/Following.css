@@ -1,0 +1,156 @@
+.ty-list-page {
+  min-height: 100dvh;
+  padding: 56px 20px 120px;
+  background: var(--ty-bg);
+}
+
+.ty-list-head {
+  display: grid;
+  grid-template-columns: 40px 1fr 60px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.ty-list-head h1 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.ty-icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ty-text);
+  background: transparent;
+  color: var(--ty-text);
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ty-text-btn {
+  border: none;
+  background: transparent;
+  color: var(--ty-text);
+  font-size: 14px;
+  text-align: right;
+}
+
+.ty-search {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.ty-search input {
+  margin: 0;
+  padding-left: 38px;
+}
+
+.ty-search svg {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 16px;
+  height: 16px;
+  color: var(--ty-placeholder);
+}
+
+.ty-person {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--ty-surface);
+  border-radius: 10px;
+  box-shadow: var(--ty-shadow);
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.ty-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #dce8f3;
+  flex: 0 0 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #4a6f92;
+}
+
+.ty-person-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.ty-person-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.ty-person-status {
+  font-size: 13px;
+  color: var(--ty-text);
+  margin: 2px 0 6px;
+}
+
+.ty-person-status.ty-great { color: #4e7b3b; }
+.ty-person-status.ty-ok    { color: #2e5c8a; }
+.ty-person-status.ty-bad   { color: #a3402f; }
+
+.ty-person-conn {
+  font-size: 12px;
+  color: var(--ty-text-muted);
+}
+
+.ty-person .ty-round-add,
+.ty-person .ty-round-remove {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.ty-round-add {
+  background: var(--ty-primary);
+}
+
+.ty-round-remove {
+  background: var(--ty-error);
+}
+
+.ty-section-title {
+  font-size: 15px;
+  margin: 22px 0 12px;
+}
+
+.ty-add-form {
+  background: var(--ty-surface);
+  border-radius: 10px;
+  box-shadow: var(--ty-shadow);
+  padding: 16px;
+}
+
+.ty-add-form input {
+  margin-bottom: 10px;
+  box-shadow: none;
+  background: var(--ty-bg);
+}
+
+.ty-empty {
+  font-size: 14px;
+  color: var(--ty-text-muted);
+  text-align: center;
+  padding: 24px 0;
+}

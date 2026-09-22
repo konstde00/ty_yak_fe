@@ -1,0 +1,36 @@
+.ty-tabbar {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--ty-app-width);
+  height: 84px;
+  padding: 10px 0 22px;
+  background: var(--ty-tabbar-bg);
+  border-top: 1px solid var(--ty-tabbar-line);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 20;
+}
+
+.ty-tabbar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 44px;
+  color: var(--ty-text);
+  opacity: 0.55;
+}
+
+.ty-tabbar a.active {
+  opacity: 1;
+}
+
+.ty-tabbar svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}

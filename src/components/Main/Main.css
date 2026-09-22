@@ -1,0 +1,263 @@
+.ty-main {
+  min-height: 100dvh;
+  padding: 24px 0 120px;
+  background: var(--ty-state-bg);
+  transition: background-color 300ms ease;
+}
+
+.ty-main-head {
+  text-align: center;
+  padding: 56px 24px 8px;
+}
+
+.ty-main-head h1 {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--ty-state-ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+
+.ty-main-head p {
+  font-size: 15px;
+  color: var(--ty-state-sub);
+}
+
+/* Carousel: neighbours peek from both sides, as in the design */
+.ty-carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 50%;
+  padding: 28px calc(50% - 150px) 20px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ty-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.ty-slide {
+  flex: 0 0 300px;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.ty-orb {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1.5px solid var(--orb-ring);
+  background: var(--orb-fill);
+  box-shadow: 0 18px 40px rgba(31, 41, 51, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--ty-text);
+  cursor: pointer;
+  transition: transform 160ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ty-orb:active {
+  transform: scale(0.98);
+}
+
+.ty-orb:disabled {
+  cursor: default;
+}
+
+.ty-orb-great {
+  --orb-ring: #8dbe78;
+  --orb-fill: radial-gradient(circle at 32% 28%, #f7eca9 0%, #eef2c4 42%, #c3e1b4 100%);
+}
+
+.ty-orb-ok {
+  --orb-ring: #6a9cc5;
+  --orb-fill: radial-gradient(circle at 68% 24%, #b9d2ec 0%, #e7eef7 44%, #f6efc8 100%);
+}
+
+.ty-orb-bad {
+  --orb-ring: #dd8a78;
+  --orb-fill: radial-gradient(circle at 30% 28%, #c9bbdb 0%, #eedfe1 44%, #efa894 100%);
+}
+
+.ty-dots {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 10px 0 0;
+}
+
+.ty-dots button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--ty-state-dot);
+  opacity: 0.35;
+}
+
+.ty-dots button.active {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+.ty-sent-note {
+  text-align: center;
+  font-size: 13px;
+  color: var(--ty-state-sub);
+  margin-top: 26px;
+}
+
+/* State palettes on the page */
+.ty-state-great {
+  --ty-state-bg: #f7fbf3;
+  --ty-state-ink: #4e7b3b;
+  --ty-state-sub: #6f9a5e;
+  --ty-state-dot: #7fb56a;
+  --ty-state-btn: #8fb573;
+  --ty-state-btn-hover: #7fa664;
+  --ty-state-line: #cfe3c4;
+}
+
+.ty-state-ok {
+  --ty-state-bg: #f3f7fb;
+  --ty-state-ink: #2e5c8a;
+  --ty-state-sub: #5f8fbe;
+  --ty-state-dot: #6a9cc5;
+  --ty-state-btn: #7fa9d6;
+  --ty-state-btn-hover: #6d9ac9;
+  --ty-state-line: #cfdeed;
+}
+
+.ty-state-bad {
+  --ty-state-bg: #fbf4f2;
+  --ty-state-ink: #a3402f;
+  --ty-state-sub: #c46a5a;
+  --ty-state-dot: #d97a6a;
+  --ty-state-btn: #e0a08f;
+  --ty-state-btn-hover: #d68f7c;
+  --ty-state-line: #f0d5cd;
+}
+
+/* Compose sheet, the "Main screen text" frame */
+.ty-compose {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  background: var(--ty-state-bg);
+  z-index: 30;
+}
+
+.ty-compose-inner {
+  position: relative;
+  width: 100%;
+  max-width: var(--ty-app-width);
+  display: flex;
+  flex-direction: column;
+}
+
+.ty-compose-close {
+  position: absolute;
+  top: 58px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ty-state-dot);
+  background: transparent;
+  color: var(--ty-state-dot);
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ty-compose-head {
+  text-align: center;
+  padding: 52px 24px 16px;
+}
+
+.ty-compose-head h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--ty-state-ink);
+  margin-bottom: 16px;
+}
+
+.ty-orb-small {
+  width: 112px;
+  height: 112px;
+  font-size: 15px;
+  margin: 0 auto;
+  box-shadow: 0 10px 24px rgba(31, 41, 51, 0.08);
+}
+
+.ty-sheet {
+  flex: 1;
+  margin-top: 8px;
+  border-top: 1px solid var(--ty-state-line);
+  background: var(--ty-state-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.ty-sheet-handle {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--ty-state-line);
+  margin: 10px auto 18px;
+}
+
+.ty-sheet textarea {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: transparent;
+  resize: none;
+  font: inherit;
+  font-size: 15px;
+  color: var(--ty-text);
+  text-align: center;
+  padding: 0 24px;
+  outline: none;
+}
+
+.ty-sheet textarea::placeholder {
+  color: var(--ty-text-muted);
+}
+
+.ty-sheet-send {
+  margin: 0 20px 44px;
+  height: 48px;
+  border: none;
+  border-radius: var(--ty-radius);
+  color: #fff;
+  font-weight: 600;
+  background: var(--ty-state-btn);
+}
+
+.ty-sheet-send:hover:not(:disabled) {
+  background: var(--ty-state-btn-hover);
+}
+
+.ty-sheet-send:disabled {
+  opacity: 0.6;
+}
+
+.ty-sheet-error {
+  text-align: center;
+  color: var(--ty-error);
+  font-size: 13px;
+  padding: 0 24px 12px;
+}

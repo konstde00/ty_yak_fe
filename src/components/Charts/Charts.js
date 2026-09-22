@@ -1,6 +1,6 @@
 import React from "react";
-import { Bar, BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis } from "recharts";
-import NavBar from "../NavBar/NavBar";
+import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import TabBar from "../Shell/TabBar";
 
 export default class Charts extends React.Component {
 
@@ -41,12 +41,11 @@ export default class Charts extends React.Component {
 
     return (
       <>
-        <NavBar/>
-        <h1 className="ty-page" style={{paddingBottom: 0}}>Most active users</h1>
+      <main className="ty-list-page">
+        <h1 className="ty-list-head-title">Найактивніші користувачі</h1>
         <div>
+          <ResponsiveContainer width="100%" height={300}>
           <BarChart
-            width={1200}
-            height={300}
             data={this.state.data}
             margin={{
               top: 5,
@@ -62,7 +61,10 @@ export default class Charts extends React.Component {
             <Legend />
             <Bar dataKey="messagesSent" fill="#82ca9d" />
           </BarChart>
+          </ResponsiveContainer>
         </div>
+      </main>
+      <TabBar />
       </>
     );
   }

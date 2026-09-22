@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Registration.css';
 import { fetchRequest } from "../../api/utils/request";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ToastContainer } from "react-toastify";
 
 async function registrateUser(credentials) {
@@ -15,6 +16,7 @@ async function registrateUser(credentials) {
 }
 
 export default function Registration({ setToken }) {
+    const { t } = useTranslation();
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -31,22 +33,22 @@ export default function Registration({ setToken }) {
         <div className="ty-auth">
             <div className="ty-auth-card">
                 <ToastContainer />
-                <h1>Sign up</h1>
+                <h1>{t("auth.register")}</h1>
                 <form onSubmit={handleSubmit}>
                     <label>
-                        <p>E-mail</p>
-                        <input type="email" placeholder="Enter your e-mail" autoComplete="email"
+                        <p>{t("auth.email")}</p>
+                        <input type="email" placeholder={t("auth.emailPlaceholder")} autoComplete="email"
                                onChange={e => setEmail(e.target.value)} />
                     </label>
                     <label>
-                        <p>Password</p>
-                        <input type="password" placeholder="Enter your password" autoComplete="new-password"
+                        <p>{t("auth.password")}</p>
+                        <input type="password" placeholder={t("auth.passwordPlaceholder")} autoComplete="new-password"
                                onChange={e => setPassword(e.target.value)} />
                     </label>
-                    <button type="submit">Sign up</button>
+                    <button type="submit">{t("auth.register")}</button>
                 </form>
                 <div className="ty-auth-links">
-                    Already have an account? <Link className="ty-caps" to="/login">Log in</Link>
+                    {t("auth.haveAccount")} <Link className="ty-caps" to="/login">{t("auth.signIn")}</Link>
                 </div>
             </div>
         </div>

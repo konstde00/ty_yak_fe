@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import '../../translations/i18n';
 import App from './App';
 
 test('renders the login screen at /login', () => {
@@ -8,5 +9,5 @@ test('renders the login screen at /login', () => {
       <App />
     </MemoryRouter>
   );
-  expect(screen.getByRole('heading', { name: /log in/i })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'Увійти' })).toBeInTheDocument();
 });
