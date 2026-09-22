@@ -1,39 +1,28 @@
 import React from "react";
 import './NavBar.css'
 import { NavLink, useNavigate } from "react-router-dom";
-import { Button } from "antd";
 
 const NavBar = () => {
 
-  var navigate = useNavigate();
+  const navigate = useNavigate();
 
-  const handleLogout = async e => {
-
+  const handleLogout = e => {
     e.preventDefault();
-
     localStorage.removeItem('token');
-
     navigate("/login");
   }
 
   return (
-    <header>
-        <nav>
-          <ul>
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/charts">Charts</NavLink>
-            </li>
-            <li>
-              <NavLink to="/files">Files</NavLink>
-            </li>
-            <li>
-              <NavLink onClick={handleLogout} to="/login">Logout</NavLink>
-            </li>
-          </ul>
+    <header className="ty-header">
+      <div className="ty-header-inner">
+        <NavLink className="ty-brand" to="/">Ty <span>yak?</span></NavLink>
+        <nav className="ty-nav">
+          <NavLink to="/" end>Overview</NavLink>
+          <NavLink to="/charts">Activity</NavLink>
+          <NavLink to="/files">Reports and roster</NavLink>
+          <a href="/login" className="ty-logout" onClick={handleLogout}>Log out</a>
         </nav>
+      </div>
     </header>
   );
 };

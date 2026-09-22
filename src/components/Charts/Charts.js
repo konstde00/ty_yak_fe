@@ -42,7 +42,7 @@ export default class Charts extends React.Component {
     return (
       <>
         <NavBar/>
-        <h1 style={{marginTop: "100px"}}>Most active users chart</h1>
+        <h1 className="ty-page" style={{paddingBottom: 0}}>Most active users</h1>
         <div>
           <BarChart
             width={1200}

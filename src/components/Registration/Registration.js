@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Registration.css';
 import { fetchRequest } from "../../api/utils/request";
-import { useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 async function registrateUser(credentials) {
     return fetchRequest({
@@ -19,38 +19,35 @@ export default function Registration({ setToken }) {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
-
     const handleSubmit = async e => {
-
         e.preventDefault();
-        const token = await registrateUser({
-            email,
-            password
-        });
+        const token = await registrateUser({ email, password });
         if (token) {
             setToken(token);
         }
     }
 
-    return(
-        <div className="registration-wrapper" style={{ margin: "auto", textAlign: "center" }}>
-            <ToastContainer />
-            <h1>Register</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    <p>Email</p>
-                    <input type="email" onChange={e => setEmail(e.target.value)} />
-                </label>
-                <label>
-                    <p>Password</p>
-                    <input type="password" onChange={e => setPassword(e.target.value)} />
-                </label>
-                <div>
-                    <button type="submit">Submit</button>
+    return (
+        <div className="ty-auth">
+            <div className="ty-auth-card">
+                <ToastContainer />
+                <h1>Sign up</h1>
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        <p>E-mail</p>
+                        <input type="email" placeholder="Enter your e-mail" autoComplete="email"
+                               onChange={e => setEmail(e.target.value)} />
+                    </label>
+                    <label>
+                        <p>Password</p>
+                        <input type="password" placeholder="Enter your password" autoComplete="new-password"
+                               onChange={e => setPassword(e.target.value)} />
+                    </label>
+                    <button type="submit">Sign up</button>
+                </form>
+                <div className="ty-auth-links">
+                    Already have an account? <Link className="ty-caps" to="/login">Log in</Link>
                 </div>
-            </form>
-            <div className="my_content_container">
-                <a href="http://localhost:3000/login">Go to login</a>
             </div>
         </div>
     )

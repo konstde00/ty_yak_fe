@@ -1,9 +1,1 @@
-.registration-wrapper {
-    /*display: flex;*/
-    flex-direction: column;
-    align-items: center;
-}
-
-h3 {
-    color: red;
-}
+/* Registration uses the shared authentication layout in index.css. */

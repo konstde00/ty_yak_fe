@@ -27,30 +27,21 @@ export default function Files() {
   return(
     <>
       <NavBar/>
-      <div>
-        <h1 style={{marginTop: "100px"}}>
-          Page for operation with files
-        </h1>
+      <main className="ty-page">
+        <h1>Reports and roster</h1>
+        <p className="ty-lead">Export the activity report, or enrol a roster from a Word or Excel file.</p>
         <button onClick={reportExport("MOST_ACTIVE_USERS", "XLSX", token)}>
           Report export xslx
         </button>
         <button onClick={reportExport("MOST_ACTIVE_USERS", "DOCX", token)}>
           Report export docx
         </button>
-        <div>
-          <h2 />
-          <h2 />
-        </div>
         <form onSubmit={handleSubmit(uploadFile)}>
           <input type="file" {...register("file")} />
           <input type="submit" />
           <ToastContainer />
         </form>
-        <div>
-          <h2 />
-          <h2 />
-        </div>
-      </div>
+      </main>
     </>
   );
 }

@@ -15,15 +15,7 @@ import Home from "../Home/Home";
 
 const App = () => {
 
-  // const navigate = useNavigate();
-
-  const { token, setToken } = useToken();
-  //
-  // if (!token) {
-  //
-  //   navigate("/login")
-  // }
-
+  const { setToken } = useToken();
   return (
     <>
       <Routes>

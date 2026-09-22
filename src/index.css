@@ -1,5 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap');
+/* Design tokens taken from the Ty yak? Figma file (Login and Sign up frames). */
+:root {
+  --ty-bg: #f3f7fa;
+  --ty-surface: #ffffff;
+  --ty-text: #1f2933;
+  --ty-text-muted: #5b6b7a;
+  --ty-placeholder: #9aa5b1;
+  --ty-primary: #6a9cc5;
+  --ty-primary-hover: #5b8db6;
+  --ty-error: #e37b5c;
+  --ty-border: #d9e2ea;
+  --ty-radius: 6px;
+  --ty-shadow: 0 1px 2px rgba(31, 41, 51, 0.06);
+  --ty-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
 
 * {
   margin: 0;
@@ -7,14 +20,22 @@
   box-sizing: border-box;
 }
 
+html,
 body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  background: #f6f6f6;
-  overflow: auto;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--ty-font);
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ty-text);
+  background: var(--ty-bg);
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
@@ -26,171 +47,192 @@ img {
   max-width: 100%;
 }
 
-.container {
-  max-width: 1200px;
+h1,
+h2 {
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+/* Form controls */
+label {
+  display: block;
+  text-align: left;
+}
+
+label p,
+.ty-label {
+  font-size: 13px;
+  color: var(--ty-text);
+  margin: 0 0 6px;
+}
+
+input[type='email'],
+input[type='password'],
+input[type='text'],
+input[type='number'] {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  font: inherit;
+  color: var(--ty-text);
+  background: var(--ty-surface);
+  border: 1px solid transparent;
+  border-radius: var(--ty-radius);
+  box-shadow: var(--ty-shadow);
+  outline: none;
+  margin-bottom: 18px;
+}
+
+input::placeholder {
+  color: var(--ty-placeholder);
+}
+
+input:focus {
+  border-color: var(--ty-primary);
+}
+
+input[aria-invalid='true'],
+input.ty-invalid {
+  border-color: var(--ty-error);
+}
+
+.ty-hint {
+  font-size: 12px;
+  color: var(--ty-text-muted);
+  margin: -12px 0 14px;
+  text-align: left;
+}
+
+button,
+input[type='submit'] {
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: var(--ty-radius);
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+button[type='submit'],
+input[type='submit'],
+.ty-btn-primary {
+  width: 100%;
+  height: 44px;
+  border: none;
+  color: #fff;
+  background: var(--ty-primary);
+}
+
+button[type='submit']:hover,
+input[type='submit']:hover,
+.ty-btn-primary:hover {
+  background: var(--ty-primary-hover);
+}
+
+button[type='submit']:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.ty-btn-secondary {
+  width: 100%;
+  height: 44px;
+  color: var(--ty-primary);
+  background: var(--ty-surface);
+  border: 1.5px solid var(--ty-primary);
+}
+
+.ty-btn-secondary:hover {
+  background: #eef4f9;
+}
+
+/* Authentication screens: Login, Registration, password recovery */
+.ty-auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 96px 16px 48px;
+}
+
+.ty-auth-card {
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+.ty-auth-card h1 {
+  margin-bottom: 36px;
+}
+
+.ty-auth-card form {
+  text-align: left;
+}
+
+.ty-auth-card .ty-btn-secondary {
+  margin-top: 10px;
+}
+
+.ty-auth-links {
+  margin-top: 28px;
+  font-size: 13px;
+  color: var(--ty-text-muted);
+}
+
+.ty-auth-links + .ty-auth-links {
+  margin-top: 12px;
+}
+
+.ty-auth-links a {
+  color: var(--ty-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ty-auth-links a.ty-caps {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ty-link-center {
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  color: var(--ty-text);
+  margin: -6px 0 18px;
+}
+
+/* Signed-in pages */
+.ty-page {
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 104px 20px 40px;
 }
 
-.container .btn {
-  margin-top: 20px;
-  display: inline-block;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background: #00a8ff;
-  color: #fff;
-  cursor: pointer;
+.ty-page h1 {
+  margin-bottom: 8px;
 }
 
-.container .btn:hover {
-  background: #0097e6;
+.ty-page .ty-lead {
+  color: var(--ty-text-muted);
+  max-width: 62ch;
 }
 
-nav {
-  background: #fff;
-  padding: 0 20px;
-  width: 100%;
-  height: 80px;
+.ty-page button {
+  width: auto;
+  height: 40px;
+  padding: 0 18px;
+  margin: 12px 8px 0 0;
 }
 
-.logo h1 {
-  color: #0097e6;
-}
-
-nav .nav-items {
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-  align-items: center;
-}
-
-.nav-items ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-items ul li {
-  list-style: none;
-  margin-left: 20px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #000;
-}
-
-.nav-items ul li a {
-  color: #000;
-}
-
-.nav-items ul li a:hover {
-  color: #00a8ff;
-}
-
-.nav-items ul li a.active {
-  color: #00a8ff;
-}
-
-.banner-container {
-  padding: 100px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.banner {
-  font-family: 'Lovers Quarrel', cursive;
-  font-size: 100px;
-  background: #fff;
-  padding: 0 20px;
-  width: 100%;
-  height: 50vh;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.banner-container .btn {
-  font-family: 'Poppins', sans-serif;
-  background: #00a8ff;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.banner-container .btn:hover {
-  background: #0097e6;
-}
-
-.container .title {
-  color: #00a8ff;
-  font-size: 30px;
-  font-weight: 600;
-  margin: 40px 0;
-}
-
-.cocktails-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 30px;
-  margin: 20px 0;
-}
-
-.cocktails-container .cocktail-card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-}
-
-.cocktails-container .cocktail-card:hover {
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-}
-
-.cocktail-card .cocktail-img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: center;
-}
-
-.cocktail-card .cocktail-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cocktail-info .cocktail-name {
-  font-size: 24px;
-  font-weight: 600;
-  color: #000;
-}
-
-.cocktail-info .btn {
-  background: #00a8ff;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-.cocktail-info .btn:hover {
-  background: #0097e6;
-}
-
-/* error component styling */
-
+/* Error page */
 .error-page {
   display: flex;
   justify-content: center;
@@ -201,40 +243,12 @@ nav .nav-items {
 }
 
 .error-page .error-code {
-  font-size: 150px;
+  font-size: 96px;
   font-weight: 600;
-  color: #00a8ff;
+  color: var(--ty-primary);
 }
 
 .error-page .error-text {
-  font-size: 34px;
-  font-weight: 600;
-  color: #000;
-}
-
-/* Single Product */
-.flex-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.flex-container .cocktail-img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  object-position: center;
-  border: 5px solid #00a8ff;
-  border-radius: 5px;
-}
-
-.cocktail-infos .row {
-  margin: 10px 0;
-}
-
-.cocktail-infos .row .label {
-  font-size: 18px;
-  font-weight: 600;
-  color: #000;
+  font-size: 22px;
+  color: var(--ty-text);
 }
